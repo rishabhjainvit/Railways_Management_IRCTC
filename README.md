@@ -1,7 +1,14 @@
-#  🚉 eRail - An online railway reservation system🎫 
-
-## Demo
-![demo](https://github.com/pranjalibajpai/railway-reservation-system/blob/master/preview/final-demo.gif)
+#  🚉 SDE API Round - IRCTC
+Hey there, Mr. X. You have been appointed to design a railway management system like IRCTC, where users can come on the platform and
+check if there are any trains available between 2 stations.
+The app will also display how many seats are available between any 2 stations and the user can book a seat if the availability > 0 after
+logging in. Since this has to be real-time and multiple users can book seats simultaneously, your code must be optimized enough to handle
+large traffic and should not fail while doing any bookings.
+If more than 1 users simultaneously try to book seats, only either one of the users should be able to book. Handle such race conditions
+while booking.
+There is a Role Based Access provision and 2 types of users would exist :
+1. Admin - can perform all operations like adding trains, updating total seats in a train, etc.
+2. Login users - can check availability of trains, seat availability, book seats, get booking details, etc.
 
 ## Schema
 Tables | Attributes
@@ -57,15 +64,6 @@ passenger | name, age, gender, pnr_no(PK, FK - ticket), berth_no(PK), berth_type
     - Table - passenger
     - Checks, whether the berth number & coach number assigned, is already assigned to some other passenger for the same train number and date of journey and coach(AC/Sleeper) or not
 
-## Ticket Booking Procedure
-- Step 1
-![step1](https://github.com/pranjalibajpai/railway-reservation-system/blob/master/flowchart/Ticket%20Booking-1.png)
-- Step 2
-![step2](https://github.com/pranjalibajpai/railway-reservation-system/blob/master/flowchart/Ticket-Booking-2.png)
-
-## Train Release Procedure
-![release](https://github.com/pranjalibajpai/railway-reservation-system/blob/master/flowchart/Release-Train.png)
-
 
 ## Assumptions Made
 - Admins are added to the table manually.
@@ -119,20 +117,9 @@ GROUP BY ticket.pnr_no;
     - PHP
 - ### Database
     - MySQL
-- ### Server
-    - Apache
 
-## How to run locally 
-- Install [XAMPP](https://www.apachefriends.org/index.html) on your system
-- Clone the repository in ```C:/xampp/htdocs``` 
-- ``` git clone https://github.com/pranjalibajpai/railway-reservation-system.git```
-- ``` cd railway-reservation-system ```
-- Start Apache & Mysql Servers from XAMPP Control Panel 
-- Visit http://localhost/phpmyadmin on your browser
-- Create a new database ```rdb```  and then click Import 
-- Select ```sql/rdb.sql``` & database will be loaded
-- Open http://localhost/railway-reservation-system on your browser
-- Now you are all set to start!
+
+
 
 ## Directory Structure
 
